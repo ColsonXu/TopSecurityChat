@@ -11,14 +11,14 @@ class Keygen(object):
 	
 	def shared_key_gen():
 		r.seed(RAND_SEED)
-		shared_key = randint(10 ** 45, 10 ** 46 - 1)
+		shared_key = r.randint(10 ** 45, 10 ** 46 - 1)
 		return shared_key
 	
 	
-	def resersion_key_gen():
+	def resersion_key_gen(RAND_SEED):
 		r.seed(RAND_SEED)
-		shared_key = randint(10 ** 45, 10 ** 46 - 1)
-		encrypt_list = [key[i:i+2] for i in range(0, len(key))]
+		generated_key = str(r.randint(10 ** 45, 10 ** 46 - 1))
+		encrypt_list = [generated_key[i:i+2] for i in range(0, len(generated_key))]
 		return encrypt_list
 
 
