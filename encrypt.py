@@ -1,18 +1,19 @@
 import random as r
 
 rand_seed = input('Please enter the private key of this message: ')
-raw_messgae = input('Please enter the message: ')
-
-print('Your encrypted message is: ' + encrypt(raw_message, rand_seed))
+raw_message = input('Please enter the message: ')
 
 
 def encrypt(r_str, rand_seed):
 	r.seed(rand_seed)
-	generated_key = r.randint(1000000000000000000000000000000000000000000000,9999999999999999999999999999999999999999999999)
-	encrypt_list = [line[i:i+2] for i in range(0, len(line), 2)]
-	print(encrypt_list)
+	generated_key = str(r.randint(1000000000000000000000000000000000000000000000,9999999999999999999999999999999999999999999999))
+	encrypt_list = [generated_key[i:i+2] for i in range(0, len(generated_key), 2)]
+	print(encrypt_list) # Debug line
 	encrypted_string = reversed(r_str)
 	return encrypted_string
+
+
+print('Your encrypted message is: ' + encrypt(raw_message, rand_seed))
 
 
 # Encryption Dictionary, DO NOT TEMPER WITH!!!
